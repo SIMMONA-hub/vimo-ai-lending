@@ -1,22 +1,15 @@
 'use client';
 
-import { motion, useScroll, useTransform, Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Heart, Star, Gamepad2, Trophy, Sparkles, Zap, Users, Target, BookOpen, Brain, Clock, BarChart2 } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 
 export default function Home() {
   const router = useRouter();
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start start', 'end end']
-  });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-  const y = useTransform(scrollYProgress, [0, 0.3], [50, 0]);
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -42,20 +35,14 @@ export default function Home() {
     }
   };
 
-  const fadeIn: Variants = {
-    hidden: { opacity: 0 },
-    visible: { 
-      opacity: 1,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
-  };
+
 
   const handleStartFreeTrial = () => {
     router.push('/pricing');
   };
 
   return (
-    <div className="min-h-screen overflow-hidden relative" ref={containerRef}>
+    <div className="min-h-screen overflow-hidden relative">
       {/* Animated Background */}
       <div className="fixed inset-0 w-full h-full">
         <div className="absolute inset-0 w-full h-full">
@@ -82,7 +69,7 @@ export default function Home() {
       >
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <img src="/StudyMateAI.png" alt="StudyMateAI" className="w-8 h-8" /> 
+                            <Image src="/StudyMateAI.png" alt="StudyMateAI" width={32} height={32} className="w-8 h-8" /> 
             <span className="text-2xl font-bold text-white">
               VimoAI
             </span> 
@@ -221,9 +208,11 @@ export default function Home() {
                     
                     <div className="relative h-full flex flex-col items-center justify-center p-8 text-center">
                       <div className="w-48 h-48 mb-6 flex items-center justify-center">
-                        <img 
+                        <Image 
                           src="/StudyMateAI.png" 
                           alt="StudyMateAI" 
+                          width={192}
+                          height={192}
                           className="w-full h-full object-contain drop-shadow-lg"
                         />
                       </div>
@@ -572,19 +561,19 @@ export default function Home() {
                 {
                   name: "Sarah K.",
                   role: "Medical Student",
-                  content: "StudyMateAI helped me organize my study schedule and stick to it. The emotional support feature is surprisingly effective when I'm feeling overwhelmed.",
+                  content: "StudyMateAI helped me organize my study schedule and stick to it. The emotional support feature is surprisingly effective when I&apos;m feeling overwhelmed.",
                   rating: 5
                 },
                 {
                   name: "David L.",
                   role: "Computer Science Major",
-                  content: "The gamification elements make studying addictive in the best way possible. I've never been this consistent with my learning.",
+                  content: "The gamification elements make studying addictive in the best way possible. I&apos;ve never been this consistent with my learning.",
                   rating: 5
                 },
                 {
                   name: "Emma R.",
                   role: "Law Student",
-                  content: "Finally an AI that understands when I need a break versus when I need encouragement to push through. It's like having a perfect study partner.",
+                  content: "Finally an AI that understands when I need a break versus when I need encouragement to push through. It&apos;s like having a perfect study partner.",
                   rating: 5
                 }
               ].map((testimonial, index) => (
@@ -605,7 +594,7 @@ export default function Home() {
                       />
                     ))}
                   </div>
-                  <p className="text-white italic mb-6 text-shadow-soft">"{testimonial.content}"</p>
+                  <p className="text-white italic mb-6 text-shadow-soft">&quot;{testimonial.content}&quot;</p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white font-bold">
                       {testimonial.name.charAt(0)}
@@ -651,7 +640,7 @@ export default function Home() {
                   transition={{ delay: 0.1 }}
                   viewport={{ once: true }}
                 >
-                  Join thousands of students who've made studying more effective and enjoyable with StudyMateAI.
+                  Join thousands of students who&apos;ve made studying more effective and enjoyable with StudyMateAI.
                 </motion.p>
                 
                 <motion.div
@@ -695,7 +684,7 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-3">
-              <img src="/StudyMateAI.png" alt="StudyMateAI" className="w-8 h-8" />
+              <Image src="/StudyMateAI.png" alt="StudyMateAI" width={32} height={32} className="w-8 h-8" />
               <span className="text-xl font-bold text-white text-shadow-lg">
                 StudyMateAI
               </span>

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, Star, Mail, Sparkles, ArrowRight, Users, Trophy, Zap } from 'lucide-react';
+import { Heart, Mail, Sparkles, ArrowRight, Users, Trophy, Zap } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
@@ -61,7 +61,7 @@ export default function Pricing() {
       >
         <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <img src="/StudyMateAI.png" alt="StudyMateAI" className="w-8 h-8" /> 
+            <Image src="/StudyMateAI.png" alt="StudyMateAI" width={32} height={32} className="w-8 h-8" /> 
             <span className="text-2xl font-bold text-white">
               VimoAI
             </span> 
@@ -234,7 +234,7 @@ export default function Pricing() {
               <p className="text-white/70 text-lg relative z-10">
                 Thank you for choosing VimoAI! 
                 <br />
-                Together we're creating the future of personalized learning ✨
+                Together we&apos;re creating the future of personalized learning ✨
               </p>
             </motion.div>
 
