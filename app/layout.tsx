@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'StudyMateAI - Your Intelligent Study Companion',
-  description: 'Transform your learning experience with StudyMateAI, your personalized AI study partner. Smarter studying through emotional intelligence and gamification.',
+  description: 'Transform your learning experience with VimoAI, your personalized AI study partner. Smarter studying through emotional intelligence and gamification.',
   keywords: ['AI study companion', 'productivity', 'learning', 'gamification', 'education technology'],
   authors: [{ name: 'StudyMateAI Team' }],
   openGraph: {
